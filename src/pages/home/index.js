@@ -39,6 +39,7 @@ const Home = () => {
 
   const startGame = () => {
     setEndGame(false);
+    setScore(0);
     if (round < 10) {
       setRound((curr) => curr + 1);
     }
@@ -80,6 +81,7 @@ const Home = () => {
     <Container>
       <Row >
         <h1 className="main-title"> Flag Guesser</h1>
+  {round && <div className="mx-auto text-center"> <span>Q{round} &nbsp; </span> <span>Points: {score}  </span></div>    }    
       </Row>
       {!round && (
         <Row className="d-flex align-content-center justify-content-around text-center">

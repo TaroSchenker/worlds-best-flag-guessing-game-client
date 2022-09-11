@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Row, Button, Stack, ButtonGroup } from "react-bootstrap";
+import { Image, Row, Button, ButtonGroup, Col } from "react-bootstrap";
 
 const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
   const [disabled1, setDisabled1] = useState(false);
@@ -16,15 +16,16 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
   const [button3Variant, setButton3Variant] = useState("outline-info");
   const [button4Variant, setButton4Variant] = useState("outline-info");
 
-  // TODO: pushed button can be spammed, need a fix! 
+  // TODO: pushed button can be spammed, need a fix!
 
   const guess = (guess) => {
     setShowAnswer(true);
     if (guess === 0) {
       setButtonOneActive(true);
-      setDisabled2(true)
-      setDisabled3(true)
-      setDisabled4(true)
+      setDisabled1(true);
+      setDisabled2(true);
+      setDisabled3(true);
+      setDisabled4(true);
       if (guess === userQuestions[4]) {
         setButton1Variant("outline-success");
       } else {
@@ -32,9 +33,10 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
       }
     } else if (guess === 1) {
       setButtonTwoActive(true);
-      setDisabled1(true)
-      setDisabled3(true)
-      setDisabled4(true)
+      setDisabled1(true);
+      setDisabled2(true);
+      setDisabled3(true);
+      setDisabled4(true);
       if (guess === userQuestions[4]) {
         setButton2Variant("outline-success");
       } else {
@@ -42,9 +44,10 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
       }
     } else if (guess === 2) {
       setButtonThreeActive(true);
-      setDisabled1(true)
-      setDisabled2(true)
-      setDisabled4(true)
+      setDisabled1(true);
+      setDisabled2(true);
+      setDisabled3(true);
+      setDisabled4(true);
       if (guess === userQuestions[4]) {
         setButton3Variant("outline-success");
       } else {
@@ -52,9 +55,10 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
       }
     } else if (guess === 3) {
       setButtonFourActive(true);
-      setDisabled1(true)
-      setDisabled2(true)
-      setDisabled3(true)
+      setDisabled1(true);
+      setDisabled2(true);
+      setDisabled3(true);
+      setDisabled4(true);
       if (guess === userQuestions[4]) {
         setButton4Variant("outline-success");
       } else {
@@ -134,7 +138,8 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
         </ButtonGroup>
       </Row>
       <Row className="mt-4 d-flex justify-content-center ">
-        <div className="p-3 bg-transparent shadow-sm"
+        <div
+          className="p-3 bg-transparent shadow-sm"
           style={{
             height: "auto",
             maxHeight: "400px",
@@ -142,13 +147,15 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             maxWidth: "400px",
           }}
         >
-          <Image fluid={true} src={userQuestions[userQuestions[4]].flagUrl} />
 
+            <p className="text-center"><span> Who's flag is this?</span> </p>
+          <Image fluid={true} src={userQuestions[userQuestions[4]].flagUrl} />
+          {/* 
           {showAnswer && (
             <p className="mt-2 text-center">
               Correct answer: {userQuestions[userQuestions[4]].name}
             </p>
-          )}
+          )} */}
         </div>
       </Row>
     </div>
