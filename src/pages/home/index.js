@@ -26,7 +26,7 @@ const Home = () => {
   useEffect(() => {
     const getHighScores = async () => {
       try {
-        const res = await axios("http://localhost:4000/api/highscores/");
+        const res = await axios("https://best-flag-guesser.herokuapp.com/api/highscores/");
         console.log(res.data);
         setHighScores(res.data);
       } catch (e) {
@@ -62,7 +62,7 @@ const Home = () => {
       };
       try {
         const res = await axios.post(
-          "http://localhost:4000/api/highscores/",
+          "https://best-flag-guesser.herokuapp.com/api/highscores",
           highScore
         );
         console.log(res);
