@@ -6,6 +6,7 @@ import { countryDataFile } from "../../data/countryDataFile";
 import Question from "../../components/question";
 import { Form, InfoDisplay } from "../../components";
 import HighScore from "../highscore";
+import { MyForm } from "../../components/form";
 
 const Home = () => {
   const [countryData, setCountryData] = useState(countryDataFile);
@@ -77,15 +78,21 @@ const Home = () => {
   }, [endGame]);
   return (
     <Container>
-      <Row>
+      <Row >
         <h1 className="main-title"> Flag Guesser</h1>
       </Row>
       {!round && (
         <Row className="d-flex align-content-center justify-content-around text-center">
-          <Col xs={5} className="shadow-sm rounded my-auto p-3 border border-dark">
+          <Col
+            xs={5}
+            className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-white"
+          >
             <InfoDisplay startGame={startGame} round={round} />
           </Col>
-          <Col xs={5} className="shadow-sm rounded my-auto p-3 border border-dark">
+          <Col
+            xs={5}
+            className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-white "
+          >
             {highScores && <HighScore highScores={highScores} />}
           </Col>
         </Row>
@@ -99,17 +106,20 @@ const Home = () => {
             userQuestions={userQuestions[round - 1]}
           />
         )}
-        {endGame && <div> end game bit</div>}
       </Row>
-      <Modal show={show} onHide={handleClose}>
+      <Modal className="my-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>You Scored: {score}</Modal.Title>
+          <div className="mx-auto text-light"></div>
+          <Modal.Title className="text-light main-title mx-auto">You Scored: {score}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Submit your score</Modal.Body>
-        <Form setDisplayName={setDisplayName} onSubmit={onSubmit} />
+        <div className="mx-auto">
+              {/* <Modal.Body className="mx-auto text-light">Submit your score</Modal.Body>  */}
+        </div>
+   
+        <MyForm setDisplayName={setDisplayName} onSubmit={onSubmit} />
         <Modal.Footer>
           <Button
-            className="button"
+            className="button text-muted"
             variant="outline-info"
             onClick={handleClose}
           >

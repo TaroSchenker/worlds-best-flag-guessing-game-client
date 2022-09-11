@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: radial-gradient(rgba(#e2cdef, 0.5) 0%, transparent 70%), linear-gradient(#0b161e 40%, #202076 70%) !important;
+  perspective: 700px;
+  font-size: clamp(10px, 2vw, 20px);
+  height: 100vh;
+}
+
+.button {
+  color: #370344 !important;
+}
+.button:hover{
+  color: rgb(0, 0, 0) !important;
+  background-color: #00b3db !important;
+  border-color: #285e8e; /*set the color you want here*/
+}
+
+.main-title{
+	font-size: 6rem !important;
+	text-align: center;
+	font-weight: 900;
+	font-family: 'Sigmar One', cursive;
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg);
+	background-size: contain;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 1px rgb(25, 25, 25);
+	
+}
+
+.nav-title{
+  font-size: 1.5rem !important;
+	text-align: center;
+	font-weight: 500;
+	font-family: 'Sigmar One', cursive;
+
+}
+
+
+
+
+/* We set the position to relative so that we can stack a blurred pseudo element on top of the original text */
+
+span {
+  position: relative;
+  color: crimson;
+  -webkit-text-stroke: 1px rgb(25, 25, 25);
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+/* We create a pseudo element and blur it using the SVG filter. We’ll grab the content from the custom HTML attribute. */
+
+span:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: attr(filter-content);
+
+  filter: url(#motion-blur-filter);
+}
+
+/* We hide the SVG filter element from the DOM as it would take up some space */
+
+svg {
+  display: none;
+}
+
+
+.modal-backdrop {
+  background-color: black !important;
+}
+
+
+.my-modal .modal-content {
+  background: radial-gradient(rgba(#e2cdef, 0.5) 0%, transparent 70%), linear-gradient(#0b161e 40%, #202076 70%) !important;
+}

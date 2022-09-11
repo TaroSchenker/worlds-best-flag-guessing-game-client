@@ -86,18 +86,17 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
     setButtonTwoActive(false);
     setButtonThreeActive(false);
     setButtonFourActive(false);
-    setButton1Variant("outline-info");
-    setButton2Variant("outline-info");
-    setButton3Variant("outline-info");
-    setButton4Variant("outline-info");
+    setButton1Variant("outline-light");
+    setButton2Variant("outline-light");
+    setButton3Variant("outline-light");
+    setButton4Variant("outline-light");
   };
   return (
     <div>
       <Row className="">
-        <p>Your Guess: {userQuestions[4]}</p>
         <ButtonGroup size="md">
           <Button
-            className="button"
+            className="rounded button m-1 p-1 shadow-sm text-white"
             active={buttonOneActive}
             variant={button1Variant}
             onClick={() => guess(0)}
@@ -106,7 +105,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             {userQuestions[0].name}
           </Button>
           <Button
-            className="button"
+            className="rounded button m-1 p-1 shadow-sm text-white"
             active={buttonTwoActive}
             variant={button2Variant}
             onClick={() => guess(1)}
@@ -115,7 +114,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             {userQuestions[1].name}
           </Button>
           <Button
-            className="button"
+            className="rounded button m-1 p-1 shadow-sm text-white "
             active={buttonThreeActive}
             variant={button3Variant}
             onClick={() => guess(2)}
@@ -124,7 +123,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             {userQuestions[2].name}
           </Button>
           <Button
-            className="button"
+            className="rounded button m-1 p-1 shadow-sm text-white"
             active={buttonFourActive}
             variant={button4Variant}
             onClick={() => guess(3)}
@@ -134,8 +133,8 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
           </Button>
         </ButtonGroup>
       </Row>
-      <Row className="mt-4 d-flex justify-content-center">
-        <div
+      <Row className="mt-4 d-flex justify-content-center ">
+        <div className="p-3 bg-transparent shadow-sm"
           style={{
             height: "auto",
             maxHeight: "400px",

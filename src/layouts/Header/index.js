@@ -1,10 +1,11 @@
 import React from "react";
+import Title from "../../components/title";
 
 const Header = () => {
   return (
-    <>
-      <h4 className="nav-title"> THE WORLDS BEST FLAG GUESSING GAME</h4>
-    </>
+    < div className="text-center mt-5">
+      <Title text="The Worlds Best Flag Guessing Game" />
+    </div>
   );
 };
 
