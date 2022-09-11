@@ -4,7 +4,7 @@ import axios from "axios";
 import { set2dQuizArray } from "../../helpers";
 import { countryDataFile } from "../../data/countryDataFile";
 import Question from "../../components/question";
-import { Form, InfoDisplay } from "../../components";
+import { Form, InfoDisplay, Timer } from "../../components";
 import HighScore from "../highscore";
 import { MyForm } from "../../components/form";
 
@@ -81,8 +81,14 @@ const Home = () => {
     <Container>
       <Row >
         <h1 className="main-title"> Flag Guesser</h1>
-  {round && <div className="mx-auto text-center"> <span>Q{round} &nbsp; </span> <span>Points: {score}  </span></div>    }    
+  {round && <div className="mx-auto text-center"> <span>Q{round} &nbsp; </span> <span>Points: {score}  </span></div>   } 
+
       </Row>
+      {round &&
+      <div className="mx-auto text-center">
+            <Timer setGuess={setGuess} setRound={setRound} round={round} /> 
+      </div>}
+       
       {!round && (
         <Row className="d-flex align-content-center justify-content-around text-center">
           <Col
