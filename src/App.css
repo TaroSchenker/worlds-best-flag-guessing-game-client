@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+.button {
+  color: #370344 !important;
+}
+
+.main-title{
+	font-size: 6rem !important;
+	text-align: center;
+	font-weight: 900;
+	font-family: 'Sigmar One', cursive;
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg);
+	background-size: contain;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 1px rgb(25, 25, 25);
+	
+}
+
+.nav-title{
+  font-size: 1.5rem !important;
+	text-align: center;
+	font-weight: 500;
+	font-family: 'Sigmar One', cursive;
+}
