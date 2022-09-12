@@ -101,14 +101,19 @@ svg {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px rgb(25, 25, 25);
   }
-  button:hover {
+  .button:hover {
     border: 0px solid rgb(0, 0, 0); /* solves sticky problem */
   }
 }
 
 
 @media (hover: hover) {
-  button:hover {
+  .button:hover {
     border: 0px solid rgb(0, 0, 0); /* solves sticky problem */
+  }
+}
+@media (hover: none) {
+  .button {
+      color: #BADA55;
   }
 }
