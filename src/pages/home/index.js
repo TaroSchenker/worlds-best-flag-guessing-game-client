@@ -76,8 +76,8 @@ const Home = () => {
   }, [endGame]);
   return (
     <Container>
-      <Row>
-        <h1 className="main-title"> Flag Guesser</h1>
+      <Row className="d-flex justify-content-center text-center">
+        <h1 className="main-title text-center"> Flag Guesser</h1>
         {round && (
           <div className="mx-auto text-center">
             {" "}
@@ -94,13 +94,13 @@ const Home = () => {
       {!round && (
         <Row className="d-flex align-content-center justify-content-around text-center">
           <Col
-            xs={5}
+            xs={12}  md={5}
             className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-dark"
           >
             <InfoDisplay startGame={startGame} round={round} />
           </Col>
           <Col
-            xs={5}
+            xs={12}  md={5}
             className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-dark "
           >
             {highScores && <HighScore highScores={highScores} />}
