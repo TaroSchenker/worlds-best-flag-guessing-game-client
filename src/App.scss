@@ -104,3 +104,10 @@ svg {
   }
   
 }
+
+
+@media (hover: hover) {
+  button:hover {
+    border: 3px solid rgb(0, 0, 0); /* solves sticky problem */
+  }
+}
