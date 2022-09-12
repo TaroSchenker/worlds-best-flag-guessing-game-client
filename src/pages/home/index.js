@@ -76,8 +76,8 @@ const Home = () => {
   }, [endGame]);
   return (
     <Container>
-      <Row className="d-flex justify-content-center text-center">
-        <h1 className="main-title text-center"> Flag Guesser</h1>
+      <Row  className="d-flex w-100 justify-content-center text-center mx-auto">
+        <h1 className="main-title text-center mx-auto"> Flag Guesser</h1>
         {round && (
           <div className="mx-auto text-center">
             {" "}
