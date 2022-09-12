@@ -7,6 +7,7 @@ import Question from "../../components/question";
 import { Form, InfoDisplay, Timer } from "../../components";
 import HighScore from "../highscore";
 import { MyForm } from "../../components/form";
+import Title from "../../components/title";
 
 const Home = () => {
   const [countryData, setCountryData] = useState(countryDataFile);
@@ -77,6 +78,7 @@ const Home = () => {
   return (
     <Container>
       <Row  className="d-flex w-100 justify-content-center text-center mx-auto">
+      {!round && <Title text="The Worlds Best Flag Guessing Game" />}
         <h1 className="main-title text-center mx-auto"> Flag Guesser</h1>
         {round && (
           <div className="mx-auto text-center">
