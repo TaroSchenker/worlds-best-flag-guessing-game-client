@@ -139,7 +139,7 @@ const Home = () => {
         <Modal.Footer>
           <Button
             className="button text-muted"
-            variant="outline-info"
+            variant="outline-primary"
             onClick={handleClose}
           >
             Close

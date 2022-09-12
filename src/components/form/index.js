@@ -10,7 +10,7 @@ export const MyForm = ({ onSubmit, setDisplayName }) => {
         <input onChange={(e)=>setDisplayName(e.target.value)} className="form-control" id="name" placeholder='Enter your name here...' />
       </div>
       <div className="d-flex justify-content-center">
-        <Button  onClick={onSubmit} className="my-2 button" variant="outline-info" type="submit">
+        <Button  onClick={onSubmit} className="my-2 button" variant="outline-primary" type="submit">
           Submit
         </Button>
       </div>
