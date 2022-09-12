@@ -11,7 +11,7 @@ const HighScore = ({ highScores }) => {
       <ListGroup as="ol" numbered>
         {highScores.map((score, i) => (
           i < 10 &&
-          <ListGroup.Item key={i} as="li" className="bg-transparent text-white">
+          <ListGroup.Item key={i} as="li" className="bg-transparent text-dark">
             {score.displayName}: {score.score}
           </ListGroup.Item>
         ))}

@@ -11,10 +11,11 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
   const [buttonThreeActive, setButtonThreeActive] = useState(false);
   const [buttonFourActive, setButtonFourActive] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [button1Variant, setButton1Variant] = useState("outline-info");
-  const [button2Variant, setButton2Variant] = useState("outline-info");
-  const [button3Variant, setButton3Variant] = useState("outline-info");
-  const [button4Variant, setButton4Variant] = useState("outline-info");
+
+  const [button1Variant, setButton1Variant] = useState("outline-primary");
+  const [button2Variant, setButton2Variant] = useState("outline-primary");
+  const [button3Variant, setButton3Variant] = useState("outline-primary");
+  const [button4Variant, setButton4Variant] = useState("outline-primary");
 
   // TODO: pushed button can be spammed, need a fix!
 
@@ -22,7 +23,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
     setShowAnswer(true);
     if (guess === 0) {
       setButtonOneActive(true);
-      setDisabled1(true);
+      // setDisabled1(true);
       setDisabled2(true);
       setDisabled3(true);
       setDisabled4(true);
@@ -34,7 +35,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
     } else if (guess === 1) {
       setButtonTwoActive(true);
       setDisabled1(true);
-      setDisabled2(true);
+      // setDisabled2(true);
       setDisabled3(true);
       setDisabled4(true);
       if (guess === userQuestions[4]) {
@@ -46,7 +47,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
       setButtonThreeActive(true);
       setDisabled1(true);
       setDisabled2(true);
-      setDisabled3(true);
+      // setDisabled3(true);
       setDisabled4(true);
       if (guess === userQuestions[4]) {
         setButton3Variant("outline-success");
@@ -58,7 +59,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
       setDisabled1(true);
       setDisabled2(true);
       setDisabled3(true);
-      setDisabled4(true);
+      // setDisabled4(true);
       if (guess === userQuestions[4]) {
         setButton4Variant("outline-success");
       } else {
@@ -90,17 +91,18 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
     setButtonTwoActive(false);
     setButtonThreeActive(false);
     setButtonFourActive(false);
-    setButton1Variant("outline-light");
-    setButton2Variant("outline-light");
-    setButton3Variant("outline-light");
-    setButton4Variant("outline-light");
+    setButton1Variant("outline-primary");
+    setButton2Variant("outline-primary");
+    setButton3Variant("outline-primary");
+    setButton4Variant("outline-primary");
   };
   return (
     <div>
       <Row className="">
         <ButtonGroup size="md">
           <Button
-            className="rounded button m-1 p-1 shadow-sm text-white"
+            // className="rounded button m-1 p-1 shadow-sm text-dark stopClick"
+            className={`rounded button m-1 p-1 shadow-sm text-dark ${showAnswer ? "stopClick" : ""}`}
             active={buttonOneActive}
             variant={button1Variant}
             onClick={() => guess(0)}
@@ -109,7 +111,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             {userQuestions[0].name}
           </Button>
           <Button
-            className="rounded button m-1 p-1 shadow-sm text-white"
+                   className={`rounded button m-1 p-1 shadow-sm text-dark ${showAnswer ? "stopClick" : ""}`}
             active={buttonTwoActive}
             variant={button2Variant}
             onClick={() => guess(1)}
@@ -118,7 +120,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             {userQuestions[1].name}
           </Button>
           <Button
-            className="rounded button m-1 p-1 shadow-sm text-white "
+                   className={`rounded button m-1 p-1 shadow-sm text-dark ${showAnswer ? "stopClick" : ""}`}
             active={buttonThreeActive}
             variant={button3Variant}
             onClick={() => guess(2)}
@@ -127,7 +129,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
             {userQuestions[2].name}
           </Button>
           <Button
-            className="rounded button m-1 p-1 shadow-sm text-white"
+                   className={`rounded button m-1 p-1 shadow-sm text-dark ${showAnswer ? "stopClick" : ""}`}
             active={buttonFourActive}
             variant={button4Variant}
             onClick={() => guess(3)}

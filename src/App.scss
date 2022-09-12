@@ -13,16 +13,17 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: radial-gradient(rgba(#b068dd, 0.5) 0%, transparent 70%),
-    linear-gradient(#04000f 40%, #010131 70%) !important;
+  // background: radial-gradient(rgba(#b068dd, 0.5) 0%, transparent 70%),
+  //   linear-gradient(#04000f 40%, #010131 70%) !important;
   
 }
 
 .button {
-  color: #370344 !important;
+  color: #020003 !important  ;
+  border-color: #202076 !important;
 }
 .button:hover {
-  color: rgb(0, 0, 0) !important;
+  color: rgb(255, 255, 255)  !important;
   border-color: #285e8e; 
 }
 
@@ -85,4 +86,8 @@ svg {
 .my-modal .modal-content {
   background: radial-gradient(rgba(#e2cdef, 0.5) 0%, transparent 70%),
     linear-gradient(#0b161e 40%, #202076 70%) !important;
+}
+
+.stopClick {
+  pointer-events: none;
 }

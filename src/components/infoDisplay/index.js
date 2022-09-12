@@ -11,7 +11,7 @@ const InfoDisplay = ({ startGame, round }) => {
         Enter your name at the end to be included in the all-time high scores
       </p>
       {round < 1 && (
-        <Button className="button" variant="info" onClick={startGame}>
+        <Button className="button" variant="outline-primary" onClick={startGame}>
           Start Game
         </Button>
       )}

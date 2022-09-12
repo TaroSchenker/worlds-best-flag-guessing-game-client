@@ -102,13 +102,13 @@ const Home = () => {
         <Row className="d-flex align-content-center justify-content-around text-center">
           <Col
             xs={5}
-            className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-white"
+            className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-dark"
           >
             <InfoDisplay startGame={startGame} round={round} />
           </Col>
           <Col
             xs={5}
-            className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-white "
+            className="shadow-sm rounded my-auto p-3 border border-muted bg-transparent text-dark "
           >
             {highScores && <HighScore highScores={highScores} />}
           </Col>

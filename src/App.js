@@ -1,8 +1,9 @@
-import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./layouts";
 import { Home } from "./pages";
+import "./_variables.scss"
 function App() {
   return (
     <>
