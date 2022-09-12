@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 export const MyForm = ({ onSubmit, setDisplayName }) => {
 
   return (
-         <form onSubmit={onSubmit}>
+         <form >
       <div className="form-group">
         <label htmlFor="name">Name</label>
         <input onChange={(e)=>setDisplayName(e.target.value)} className="form-control" id="name" placeholder='Enter your name here...' />
