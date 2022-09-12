@@ -1,6 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { TimerContext } from "../../context/TimerContext";
+
 
 const Timer = ({ round, setRound, setGuess}) => {
+  const [
+    time,
+    setTime,
+  ] = useContext(TimerContext);
   // We need ref in this, because we are dealing
   // with JS setInterval to keep track of it and
   // stop it when needed
@@ -8,6 +14,7 @@ const Timer = ({ round, setRound, setGuess}) => {
 
   // The state for our timer
   const [timer, setTimer] = useState("00");
+
   const getTimeRemaining = (e) => {
     const total = Date.parse(e) - Date.parse(new Date());
     const seconds = Math.floor((total / 1000) % 60);
@@ -32,6 +39,7 @@ const Timer = ({ round, setRound, setGuess}) => {
   };
 
   const clearTimer = (e) => {
+    setTime(timer)
     // If you adjust it you should also need to
     // adjust the Endtime formula we are about
     // to code next
@@ -79,7 +87,7 @@ const Timer = ({ round, setRound, setGuess}) => {
   }, [round])
 
   useEffect(() => {
-    console.log('tick tock')
+
 if(timer == 0){
     console.log('out of time loser!')
     setRound( curr => curr += 1)

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Image, Row, Button, ButtonGroup, Col } from "react-bootstrap";
+import { TimerContext } from "../../context/TimerContext";
 
 const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
   const [disabled1, setDisabled1] = useState(false);
@@ -17,6 +18,10 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
   const [button3Variant, setButton3Variant] = useState("outline-primary");
   const [button4Variant, setButton4Variant] = useState("outline-primary");
 
+  const [
+    time,
+    setTime,
+  ] = useContext(TimerContext);
   // TODO: pushed button can be spammed, need a fix!
 
   const guess = (guess) => {
@@ -71,7 +76,7 @@ const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
 
     if (guess === userQuestions[4]) {
       console.log("correct answer");
-      setScore((curr) => (curr += 1));
+      setScore((curr) => (curr + (time * 10)));
     } else {
       console.log("wrong answer");
     }

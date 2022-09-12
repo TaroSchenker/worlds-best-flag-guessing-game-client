@@ -29,7 +29,6 @@ const Home = () => {
         const res = await axios(
           "https://best-flag-guesser.herokuapp.com/api/highscores/"
         );
-        console.log(res.data);
         setHighScores(res.data);
       } catch (e) {
         alert(e);
@@ -38,7 +37,6 @@ const Home = () => {
     getHighScores();
     setUserQuestions(set2dQuizArray(countryData));
   }, []);
-  console.log("in the open displayname", displayName);
   const startGame = () => {
     setEndGame(false);
     setScore(0);
@@ -48,28 +46,23 @@ const Home = () => {
   };
 
   useEffect(() => {
-    console.log("new round", round, userQuestions[round - 1]);
     if (round >= 10) {
-      console.log("end the game");
       setEndGame(true);
       setRound(null);
     }
   }, [round]);
 
   const onSubmit = (e) => {
-    console.log("i am submittted", displayName);
     const setHighScore = async () => {
       const highScore = {
         displayName: displayName,
         score: score,
       };
-      console.log("highscore variable", highScore);
       try {
         const res = await axios.post(
           "https://best-flag-guesser.herokuapp.com/api/highscores",
           highScore
         );
-        console.log("server respnse from post req:", res);
       } catch (e) {
         alert(e);
       }
