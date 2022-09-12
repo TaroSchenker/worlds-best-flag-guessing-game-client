@@ -84,7 +84,6 @@ const Home = () => {
   return (
     <Container>
       <Row>
-      <Button onClick={handleShow}> show modal</Button>
         <h1 className="main-title"> Flag Guesser</h1>
         {round && (
           <div className="mx-auto text-center">
