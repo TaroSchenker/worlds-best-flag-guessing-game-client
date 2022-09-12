@@ -26,7 +26,9 @@ const Home = () => {
   useEffect(() => {
     const getHighScores = async () => {
       try {
-        const res = await axios("https://best-flag-guesser.herokuapp.com/api/highscores/");
+        const res = await axios(
+          "https://best-flag-guesser.herokuapp.com/api/highscores/"
+        );
         console.log(res.data);
         setHighScores(res.data);
       } catch (e) {
@@ -36,7 +38,7 @@ const Home = () => {
     getHighScores();
     setUserQuestions(set2dQuizArray(countryData));
   }, []);
-
+  console.log("in the open displayname", displayName);
   const startGame = () => {
     setEndGame(false);
     setScore(0);
@@ -54,18 +56,20 @@ const Home = () => {
     }
   }, [round]);
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    console.log("i am submittted", displayName);
     const setHighScore = async () => {
       const highScore = {
         displayName: displayName,
         score: score,
       };
+      console.log("highscore variable", highScore);
       try {
         const res = await axios.post(
           "https://best-flag-guesser.herokuapp.com/api/highscores",
           highScore
         );
-        console.log(res);
+        console.log("server respnse from post req:", res);
       } catch (e) {
         alert(e);
       }
@@ -79,16 +83,22 @@ const Home = () => {
   }, [endGame]);
   return (
     <Container>
-      <Row >
+      <Row>
+      <Button onClick={handleShow}> show modal</Button>
         <h1 className="main-title"> Flag Guesser</h1>
-  {round && <div className="mx-auto text-center"> <span>Q{round} &nbsp; </span> <span>Points: {score}  </span></div>   } 
-
+        {round && (
+          <div className="mx-auto text-center">
+            {" "}
+            <span>Q{round} &nbsp; </span> <span>Points: {score} </span>
+          </div>
+        )}
       </Row>
-      {round &&
-      <div className="mx-auto text-center">
-            <Timer setGuess={setGuess} setRound={setRound} round={round} /> 
-      </div>}
-       
+      {round && (
+        <div className="mx-auto text-center">
+          <Timer setGuess={setGuess} setRound={setRound} round={round} />
+        </div>
+      )}
+
       {!round && (
         <Row className="d-flex align-content-center justify-content-around text-center">
           <Col
@@ -118,12 +128,14 @@ const Home = () => {
       <Modal className="my-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <div className="mx-auto text-light"></div>
-          <Modal.Title className="text-light main-title mx-auto">You Scored: {score}</Modal.Title>
+          <Modal.Title className="text-light main-title mx-auto">
+            You Scored: {score}
+          </Modal.Title>
         </Modal.Header>
         <div className="mx-auto">
-              {/* <Modal.Body className="mx-auto text-light">Submit your score</Modal.Body>  */}
+          {/* <Modal.Body className="mx-auto text-light">Submit your score</Modal.Body>  */}
         </div>
-   
+
         <MyForm setDisplayName={setDisplayName} onSubmit={onSubmit} />
         <Modal.Footer>
           <Button
