@@ -4,7 +4,7 @@ export const randomNumberGenerator = (maxNumber) => {
 
 export const getFortyCountriesforQuiz = (countryData) => {
   const fortyCountriesArray = [];
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 48; i++) {
     const randomNumber = randomNumberGenerator(250);
     const isNumberUnique = fortyCountriesArray.find((e) => e === randomNumber);
     if (!isNumberUnique) {

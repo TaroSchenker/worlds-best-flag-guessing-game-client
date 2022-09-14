@@ -27,9 +27,10 @@ const Timer = ({ round, setRound, setGuess}) => {
       seconds,
     };
   };
-
+console.log('timeite', timer)
   const startTimer = (e) => {
     let { total, hours, minutes, seconds } = getTimeRemaining(e);
+        setTimer("5");
     if (total >= 0) {
       // update the timer
       // check if less than 10 then we need to

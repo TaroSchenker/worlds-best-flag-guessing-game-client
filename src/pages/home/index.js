@@ -40,19 +40,23 @@ const Home = () => {
   }, []);
   const startGame = () => {
     setEndGame(false);
-    setScore(0);
-    if (round < 10) {
-      setRound((curr) => curr + 1);
+    setScore(0); 
+    console.log('roundround', round)
+    if(round ===0 ){
+
     }
+    // if (round < 10) {
+      setRound((curr) => curr + 1);
+    // }
   };
 
   useEffect(() => {
-    if (round >= 10) {
+    if (round >= 12) {
       setEndGame(true);
       setRound(null);
     }
   }, [round]);
-
+  console.log(round)
   const onSubmit = (e) => {
     const setHighScore = async () => {
       const highScore = {
@@ -83,7 +87,7 @@ const Home = () => {
         {round && (
           <div className="mx-auto text-center">
             {" "}
-            <span>Q{round} &nbsp; </span> <span>Points: {score} </span>
+            <span>Q{round-1} &nbsp; </span> <span>Points: {score} </span>
           </div>
         )}
       </Row>
