@@ -3,6 +3,7 @@ import { Image, Row, Button, ButtonGroup, Col } from "react-bootstrap";
 import { TimerContext } from "../../context/TimerContext";
 
 const Question = ({ userQuestions, setRound, setGuess, setScore }) => {
+
   const [disabled1, setDisabled1] = useState(false);
   const [disabled2, setDisabled2] = useState(false);
   const [disabled3, setDisabled3] = useState(false);
